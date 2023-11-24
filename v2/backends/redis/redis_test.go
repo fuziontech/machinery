@@ -4,9 +4,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/RichardKnop/machinery/v2/backends/redis"
-	"github.com/RichardKnop/machinery/v2/config"
-	"github.com/RichardKnop/machinery/v2/tasks"
+	"github.com/fuziontech/machinery/v2/backends/redis"
+	"github.com/fuziontech/machinery/v2/config"
+	"github.com/fuziontech/machinery/v2/tasks"
 	"github.com/stretchr/testify/assert"
 )
 

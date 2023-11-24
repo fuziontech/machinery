@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/RichardKnop/machinery/v1/tasks"
+	"github.com/fuziontech/machinery/v1/tasks"
 	"github.com/stretchr/testify/assert"
 )
 

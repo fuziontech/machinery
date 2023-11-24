@@ -10,16 +10,16 @@ import (
 	"github.com/google/uuid"
 	"github.com/robfig/cron/v3"
 
-	"github.com/RichardKnop/machinery/v2/backends/result"
-	"github.com/RichardKnop/machinery/v2/config"
-	"github.com/RichardKnop/machinery/v2/log"
-	"github.com/RichardKnop/machinery/v2/tasks"
-	"github.com/RichardKnop/machinery/v2/tracing"
-	"github.com/RichardKnop/machinery/v2/utils"
+	"github.com/fuziontech/machinery/v2/backends/result"
+	"github.com/fuziontech/machinery/v2/config"
+	"github.com/fuziontech/machinery/v2/log"
+	"github.com/fuziontech/machinery/v2/tasks"
+	"github.com/fuziontech/machinery/v2/tracing"
+	"github.com/fuziontech/machinery/v2/utils"
 
-	backendsiface "github.com/RichardKnop/machinery/v2/backends/iface"
-	brokersiface "github.com/RichardKnop/machinery/v2/brokers/iface"
-	lockiface "github.com/RichardKnop/machinery/v2/locks/iface"
+	backendsiface "github.com/fuziontech/machinery/v2/backends/iface"
+	brokersiface "github.com/fuziontech/machinery/v2/brokers/iface"
+	lockiface "github.com/fuziontech/machinery/v2/locks/iface"
 	opentracing "github.com/opentracing/opentracing-go"
 )
 

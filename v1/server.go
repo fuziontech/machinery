@@ -10,17 +10,17 @@ import (
 	"github.com/google/uuid"
 	"github.com/robfig/cron/v3"
 
-	"github.com/RichardKnop/machinery/v1/backends/result"
-	"github.com/RichardKnop/machinery/v1/brokers/eager"
-	"github.com/RichardKnop/machinery/v1/config"
-	"github.com/RichardKnop/machinery/v1/log"
-	"github.com/RichardKnop/machinery/v1/tasks"
-	"github.com/RichardKnop/machinery/v1/tracing"
-	"github.com/RichardKnop/machinery/v1/utils"
+	"github.com/fuziontech/machinery/v1/backends/result"
+	"github.com/fuziontech/machinery/v1/brokers/eager"
+	"github.com/fuziontech/machinery/v1/config"
+	"github.com/fuziontech/machinery/v1/log"
+	"github.com/fuziontech/machinery/v1/tasks"
+	"github.com/fuziontech/machinery/v1/tracing"
+	"github.com/fuziontech/machinery/v1/utils"
 
-	backendsiface "github.com/RichardKnop/machinery/v1/backends/iface"
-	brokersiface "github.com/RichardKnop/machinery/v1/brokers/iface"
-	lockiface "github.com/RichardKnop/machinery/v1/locks/iface"
+	backendsiface "github.com/fuziontech/machinery/v1/backends/iface"
+	brokersiface "github.com/fuziontech/machinery/v1/brokers/iface"
+	lockiface "github.com/fuziontech/machinery/v1/locks/iface"
 	opentracing "github.com/opentracing/opentracing-go"
 )
 
@@ -99,6 +99,11 @@ func (server *Server) NewCustomQueueWorker(consumerTag string, concurrency int, 
 		Concurrency: concurrency,
 		Queue:       queue,
 	}
+}
+
+func (server *Server) ClearSchedule() {
+	server.scheduler.Stop()
+	server.scheduler = cron.New()
 }
 
 // GetBroker returns broker

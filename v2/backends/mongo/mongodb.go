@@ -13,11 +13,11 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	"github.com/RichardKnop/machinery/v2/backends/iface"
-	"github.com/RichardKnop/machinery/v2/common"
-	"github.com/RichardKnop/machinery/v2/config"
-	"github.com/RichardKnop/machinery/v2/log"
-	"github.com/RichardKnop/machinery/v2/tasks"
+	"github.com/fuziontech/machinery/v2/backends/iface"
+	"github.com/fuziontech/machinery/v2/common"
+	"github.com/fuziontech/machinery/v2/config"
+	"github.com/fuziontech/machinery/v2/log"
+	"github.com/fuziontech/machinery/v2/tasks"
 )
 
 // Backend represents a MongoDB result backend

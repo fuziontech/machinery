@@ -14,12 +14,12 @@ import (
 	redsyncredis "github.com/go-redsync/redsync/v4/redis/redigo"
 	"github.com/gomodule/redigo/redis"
 
-	"github.com/RichardKnop/machinery/v2/brokers/errs"
-	"github.com/RichardKnop/machinery/v2/brokers/iface"
-	"github.com/RichardKnop/machinery/v2/common"
-	"github.com/RichardKnop/machinery/v2/config"
-	"github.com/RichardKnop/machinery/v2/log"
-	"github.com/RichardKnop/machinery/v2/tasks"
+	"github.com/fuziontech/machinery/v2/brokers/errs"
+	"github.com/fuziontech/machinery/v2/brokers/iface"
+	"github.com/fuziontech/machinery/v2/common"
+	"github.com/fuziontech/machinery/v2/config"
+	"github.com/fuziontech/machinery/v2/log"
+	"github.com/fuziontech/machinery/v2/tasks"
 )
 
 const defaultRedisDelayedTasksKey = "delayed_tasks"
