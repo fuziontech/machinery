@@ -1,7 +1,7 @@
 package log
 
 import (
-	"github.com/fuziontech/logging"
+	"github.com/RichardKnop/logging"
 )
 
 var (
