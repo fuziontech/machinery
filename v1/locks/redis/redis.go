@@ -3,8 +3,9 @@ package redis
 import (
 	"context"
 	"errors"
+	"fmt"
+	"net/url"
 	"strconv"
-	"strings"
 	"time"
 
 	"github.com/fuziontech/machinery/v1/config"
@@ -29,16 +30,21 @@ func New(cnf *config.Config, addrs []string, db, retries int) Lock {
 
 	var password string
 
-	parts := strings.Split(addrs[0], "@")
-	if len(parts) >= 2 {
-		password = strings.Join(parts[:len(parts)-1], "@")
-		addrs[0] = parts[len(parts)-1] // addr is the last one without @
+	redisURL, err := url.Parse(addrs[0])
+	if err != nil {
+		fmt.Println("url parse failed, err:", err)
+	}
+	password, hasPass := redisURL.User.Password()
+	user := redisURL.User.Username()
+	if hasPass {
+		addrs[0] = redisURL.Host
 	}
 
 	ropt := &redis.UniversalOptions{
 		Addrs:    addrs,
 		DB:       db,
 		Password: password,
+		Username: user,
 	}
 	if cnf.Redis != nil {
 		ropt.MasterName = cnf.Redis.MasterName
